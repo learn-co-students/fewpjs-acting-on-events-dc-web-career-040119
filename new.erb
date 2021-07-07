@@ -1,0 +1,32 @@
+<h1>Catch a new Pokemon</h1>
+
+<form action="/pokemon" method="POST">
+
+    <label for="species">Species</label>
+    <input type="text" name="species">
+
+    <label for="name">Name</label>
+    <input type="text" name="name">
+
+    <label for="kind">Kind</label>
+    <input type="text" name="kind">
+
+    <label for="gender">Gender</label>
+    <input type="text" name="gender">
+
+    <label for="mood">Mood</label>
+    <input type="text" name="mood">
+
+    <label for="level">Level</label>
+    <input type="text" name="level">
+
+    <label for="trainer">Trainer</label>
+    <select name="trainer">
+        <% Trainer.all.each do |trainer| %>
+          <option value="<%= trainer.id %>"><%= trainer.name %></option>
+        <% end %>
+    </select>
+
+    <input type="submit" value="Create Pokemon">
+
+</form>

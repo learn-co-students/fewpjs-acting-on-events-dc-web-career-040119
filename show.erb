@@ -1,0 +1,21 @@
+<h1>Detail Page for <%= @pokemon.name %></h1>
+
+
+<h2>Pokemon Info</h2>
+<ul>
+  <li>Species: <%= @pokemon.species %></li>
+  <li>Kind: <%= @pokemon.kind %></li>
+  <li>Gender: <%= @pokemon.gender %></li>
+  <li>Mood: <%= @pokemon.mood %></li>
+  <li>Level: <%= @pokemon.level %></li>
+  <li>Kind: <%= @pokemon.kind %></li>
+  <li>Trainer: <%= @pokemon.trainer.name %></li>
+</ul>
+
+<form action="/pokemon/<%= @pokemon.id %>" method="POST">
+    <input type="hidden" value="DELETE" name="_method">
+    <input type="submit" value="Release this Pokemon">
+</form>
+
+<a href="/pokemon/<%= @pokemon.id %>/edit">Edit this Pokemon</a>
+<a href="/pokemon">List of Pokemon</a>
